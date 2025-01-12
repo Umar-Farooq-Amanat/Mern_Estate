@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 dotenv.config();
 
+import userRouter from '../api/routes/user.routes.js'
+
 //UmarFarooq
 //Umar@1034
 //umarfarooqbcs
@@ -16,11 +18,11 @@ mongoose.connect(process.env.MONGO).then(()=>{
 })
 
 
-const app = express();
+const server = express();
+
+server.use('/api/user', userRouter);
 
 
-
-
-app.listen(3000, ()=>{
+server.listen(3000, ()=>{
     console.log("server running");
 })
