@@ -31,6 +31,17 @@ server.use(express.json())
 server.use('/api/user', userRouter);
 server.use('/api/auth', authRouter);
 
+server.use((err,req,res,next)=>{
+const statuscode= err.statuscode || 500;
+const message= err.message || 'internal server error';
+
+return res.status(statuscode).json({
+    success:false,
+    statuscode,
+    message
+})
+})
+
 
 server.listen(3000, ()=>{
     console.log("server running");
