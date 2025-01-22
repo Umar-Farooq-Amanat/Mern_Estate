@@ -3,7 +3,7 @@ import { FaSpinner } from 'react-icons/fa';
 import { Link , useNavigate } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 
-import { signInStart,signInSuccess,signInFailure } from '../../../api/redux/user/userSlice.js'; 
+import { signInStart,signInSuccess,signInFailure } from '../redux/user/userSlice.js'; 
 
 const SignIn = () => {
   const [formData,setFormData]= useState({})

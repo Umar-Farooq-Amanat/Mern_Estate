@@ -12,4 +12,9 @@ export default defineConfig({
     }
   },
   plugins: [react()],
+  resolve: {
+    alias: {
+      'redux-persist': 'redux-persist', // Explicit alias (if needed)
+    },
+  },
 })
