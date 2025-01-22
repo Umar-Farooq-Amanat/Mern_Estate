@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FaSpinner } from 'react-icons/fa';
 import { Link , useNavigate } from 'react-router-dom'
+import Oauth from '../components/Oauth';
 
 const SignUp = () => {
   const [formData,setFormData]= useState({})
@@ -64,7 +65,7 @@ const SignUp = () => {
           <input type="email" name="email" id="email" placeholder='email' className='border p-3 rounded-lg' onChange={handleChange}/>
           <input type="password" name="password" id="password" placeholder='passwrod' className='border p-3 rounded-lg' onChange={handleChange}/>
           <button type='submit'  className='bg-slate-700 text-white border p-3 rounded-lg uppercase hover:opacity-95'> {loading? 'Loading...'  : 'Sign Up'}</button>
-
+          <Oauth />
         </form>
 
         <div className='flex gap-2 mt-3'>
