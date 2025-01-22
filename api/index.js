@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import cors from 'cors';
 dotenv.config();
 
 import userRouter from '../api/routes/user.routes.js';
@@ -41,6 +42,11 @@ return res.status(statuscode).json({
     message
 })
 })
+
+server.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true, // Allow cookies
+}));
 
 
 server.listen(3000, ()=>{

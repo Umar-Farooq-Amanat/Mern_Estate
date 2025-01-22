@@ -14,7 +14,7 @@ const UserSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    photo: {
+    avatar: {
         type:String,
         default: 'https://www.svgrepo.com/show/382109/male-avatar-boy-face-man-user-7.svg'
     },
